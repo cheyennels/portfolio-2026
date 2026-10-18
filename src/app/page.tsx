@@ -60,13 +60,14 @@ export default function Home() {
         <div className="project-grid">
           {featured.map((p) => (
             <Link key={p.slug} href={`/work/${p.slug}`} className="project-card">
-              <Image
-                className="project-card__icon"
-                src={p.card.icon.src}
-                alt={p.card.icon.alt}
-                width={p.card.icon.width}
-                height={p.card.icon.height}
-              />
+              <div className="project-card__icon">
+                <Image
+                  src={p.card.icon.src}
+                  alt={p.card.icon.alt}
+                  width={p.card.icon.width}
+                  height={p.card.icon.height}
+                />
+              </div>
               <h3 className="project-card__title">{p.card.title}</h3>
               <p className="card-body">{p.card.summary}</p>
               <Chips items={p.card.tags} />

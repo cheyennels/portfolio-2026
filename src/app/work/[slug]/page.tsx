@@ -107,16 +107,16 @@ export default async function CaseStudy({ params }: PageProps<"/work/[slug]">) {
                   <p className="card-body" style={{ marginTop: 9 }}>{f.body}</p>
                 </div>
                 {f.images && (
-                  <div className="feature__images">
+                  <div className={`feature__images cols-${f.columns ?? 4}`}>
                     {f.images.map((img) => (
                       <Image
                         key={img.src}
-                        className={img.width > 600 ? "wide" : undefined}
+                        className={img.wide ? "wide" : undefined}
                         src={img.src}
                         alt={img.alt}
                         width={img.width}
                         height={img.height}
-                        sizes="(max-width: 1160px) 100vw, 1000px"
+                        sizes={img.wide ? "(max-width: 1160px) 100vw, 1000px" : "(max-width: 640px) 50vw, 500px"}
                       />
                     ))}
                   </div>

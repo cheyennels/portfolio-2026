@@ -22,10 +22,10 @@ export const home = {
   },
   rightNow: {
     updated: "Updated August 2026",
-    eyebrow: "Next up",
+    eyebrow: "In progress",
     title: "This Old Horse - Redesign",
     body: "A horse rescue and retirement nonprofit in Hastings, MN. I used to volunteer here on weekends and did some events. The current Wix site has grown into a maze of nested pages that is difficult to navigate. I’m redesigning the website so adopters, donors, and volunteers can easily find what they need.",
-    status: "Pre-kickoff · Case study coming soon",
+    status: "Hi-fi mockups underway", // TODO: draft
     toolkit: ["Figma", "WCAG 2.1"],
     href: "/work/this-old-horse",
   },
