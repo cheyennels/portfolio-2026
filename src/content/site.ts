@@ -10,7 +10,7 @@ export const site = {
   links: {
     github: "https://github.com/", // TODO: your GitHub profile URL
     linkedin: "https://www.linkedin.com/", // TODO: your LinkedIn profile URL
-    resume: "/resume.pdf", // TODO: drop your resume PDF into /public/resume.pdf
+    resume: "/Cheyenne-Smith-Resume.pdf", // replace this file in /public to update the download
   },
 };
 
@@ -18,7 +18,7 @@ export const home = {
   hero: {
     heading: "Seven years of design and development.",
     accent: "Now, just design.",
-    body: "I design interfaces in Figma, build clickable prototypes, and design systems, with the front-end fluency to know what actually ships well. I'm looking for UX/UI and design roles to put that toolkit to work.",
+    body: "I design clean, accessible interfaces and the design systems behind them. After seven years building front ends, I design with the code in mind, so handoffs are smooth and what ships matches the mockup.",
   },
   rightNow: {
     updated: "Updated August 2026",
@@ -65,32 +65,42 @@ export const resume = {
       items: ["User interviews", "A/B testing", "Design thinking", "Git", "Shopify/Liquid", "Squarespace", "Agile", "Wordpress"],
     },
   ],
-  experienceRange: "2019 - 2026",
+  experienceRange: "2018 - 2025",
   experience: [
     {
-      role: "Engineer II, UX/UI Designer - 3.5 years",
-      company: "Compoze Labs",
-      body: "Designed UI and clickable prototypes in Figma for mobile and web app features, then built the front-end myself before handing off to full-stack engineers. Built a component-based design system in Storybook (React + Chakra UI) that cut inconsistencies across projects, and implemented WCAG 2.1 accessibility standards that improved client satisfaction scores.",
+      role: "Front-End Developer & Designer",
+      company: "Compoze Labs · 2022 – 2025",
+      body: "Designed a sales-training app for a venture-funded tech startup, and designed and developed applications for a major packaging manufacturer in Minnesota. Designed and built a component-based design system in Storybook (React + Chakra UI) that kept UI consistent across projects and cut development time, applied WCAG 2.1 accessibility standards across client products, and partnered with designers and engineers to shorten handoff time.",
     },
     {
-      role: "Front End Developer - 2 years",
-      company: "KRUTSCH",
-      body: "Converted internal design assets into a reusable design system (Material UI, Storybook, React) and delivered production-ready front-ends across React Native, Swift, and Svelte for client applications. Built custom Shopify storefronts using Liquid for e-commerce clients.",
+      role: "Front-End Developer",
+      company: "KRUTSCH · 2021 – 2022",
+      body: "Turned internal design assets into a reusable design system (Material UI, Storybook, React), speeding up developer onboarding. Built client front ends in React Native, Swift and Svelte with a consistent visual design across platforms, plus custom Shopify storefront components and styles in Liquid.",
     },
     {
-      role: "UX/UI Tutor and TA - 1 year",
-      company: "2U Education",
-      body: "Mentored cohorts of 20–30 students 1:1 in UX/UI fundamentals, HTML/CSS, JavaScript, and Git — helping them design, build, and ship their own portfolio-ready projects.",
+      role: "Web Designer (Contract)",
+      company: "W2 Films · 2020",
+      body: "Designed microsites for nonprofit fundraising galas that moved online during COVID: event sites, promotional web assets and livestream viewing pages. Helped major nonprofits raise over $3 million in 6 months while in-person fundraising events weren't possible.",
     },
     {
-      role: "Web Designer - 1 year",
-      company: "W2 Films (Contractor)",
-      body: "Designed micro sites for live streamed gala events during COVID; including the event website, promotional web assets to advertise it, and the livestream viewing site itself. Helping organizations move fundraising galas online almost overnight.",
+      role: "Graphic Designer (Contract)",
+      company: "Mlatino · 2020",
+      body: "Designed billboards, web ads, brochures, social media content, video graphics and other print materials for COVID public-health campaigns, helping the Hispanic community stay informed about social distancing and masking guidance.",
     },
     {
-      role: "Graphic Design Assistant - 2 years",
-      company: "Minneapolis Community and Technical College",
-      body: "Designed branded marketing materials, including brochures, flyers, and social graphics, for school events and campaigns, building foundational design skills under the college's brand guidelines.",
+      role: "UX/UI Tutor & TA",
+      company: "Trilogy Education Services (2U) · 2020 – 2021",
+      body: "Mentored cohorts of 20–30 students one-on-one in UX/UI fundamentals, HTML/CSS, JavaScript and Git, and gave feedback on group projects.",
+    },
+    {
+      role: "Graphic Designer",
+      company: "Minneapolis Community & Technical College · 2018 – 2020",
+      body: "Designed advertisements, web ads, brochures, flyers and social graphics for school events and campaigns within the college's brand guidelines.",
+    },
+    {
+      role: "Graphic Design Intern",
+      company: "Can Do Canines · 2018 – 2019",
+      body: "Designed branded print pieces, digital graphics, web ads and social media content in Photoshop, Illustrator and InDesign.",
     },
   ],
 };

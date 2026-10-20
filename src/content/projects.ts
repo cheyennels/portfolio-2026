@@ -173,8 +173,8 @@ export const projects: Project[] = [
       "A community sighting map for unexplained things in the sky — with live flight, planetary, and satellite data to help people figure out what they're actually looking at.",
     heroImage: { src: "/images/notaplane-hero.png", width: 470, height: 397, alt: "Not A Plane sighting map with pixel-art alien and UFO" },
     buttons: [
-      { label: "View live demo", href: "#", primary: true }, // TODO: live demo URL
-      { label: "View Github", href: "#" }, // TODO: repo URL
+      { label: "View live demo", href: "https://not-a-plane.vercel.app/", primary: true },
+      { label: "View Github", href: "https://github.com/cheyennels/NotAPlane" },
     ],
     meta: [
       { label: "Role", value: "Solo designer & Developer" },
@@ -249,16 +249,16 @@ export const projects: Project[] = [
     featured: true,
     card: {
       title: "This Old Horse — Redesign",
-      summary: "Untangling a horse rescue nonprofit's website so adopters, donors, and volunteers can find what they need.", // TODO: draft
+      summary: "Concept redesign untangling a horse rescue nonprofit's website so adopters, donors, and volunteers can find what they need.",
       tags: ["Web", "Nonprofit"],
       icon: { src: "/images/icon-toh.png", width: 48, height: 64, alt: "" },
     },
-    alert: "Case study · Web · In progress",
+    alert: "Concept redesign · Web · In progress",
     intro:
       "A horse rescue and retirement nonprofit in Hastings, MN. I used to volunteer here on weekends and did some events. The current Wix site has grown into a maze of nested pages that is difficult to navigate. I’m redesigning the website so adopters, donors, and volunteers can easily find what they need.",
     heroImage: { src: "/images/toh-hero.jpg", width: 520, height: 260, alt: "Redesigned This Old Horse home page hero with horses and a Plutarch quote" },
     meta: [
-      { label: "Role", value: "UX/UI Designer" }, // TODO: confirm
+      { label: "Role", value: "UX/UI Designer (self-initiated)" },
       { label: "Organization website", value: "thisoldhorse.org" },
       { label: "Status", value: "Hi-fi mockups in progress" }, // TODO: draft
     ],
