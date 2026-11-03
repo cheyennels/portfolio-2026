@@ -21,7 +21,7 @@ export const home = {
     body: "I design clean, accessible interfaces and the design systems behind them. After seven years building front ends, I design with the code in mind, so handoffs are smooth and what ships matches the mockup.",
   },
   rightNow: {
-    updated: "Updated August 2026",
+    updatedOn: "2026-10-18", // YYYY-MM-DD: change this whenever you edit this section
     eyebrow: "In progress",
     title: "This Old Horse - Redesign",
     body: "A horse rescue and retirement nonprofit in Hastings, MN. I used to volunteer here on weekends and did some events. The current Wix site has grown into a maze of nested pages that is difficult to navigate. I’m redesigning the website so adopters, donors, and volunteers can easily find what they need.",

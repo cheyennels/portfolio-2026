@@ -44,8 +44,15 @@ export function Button({
   if (href.startsWith("/") && !download) {
     return <Link className={className} href={href}>{content}</Link>;
   }
+  // Links to other websites open in a new tab so visitors don't lose the portfolio
+  const external = /^https?:\/\//.test(href);
   return (
-    <a className={className} href={href} download={download || undefined}>
+    <a
+      className={className}
+      href={href}
+      download={download || undefined}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
       {content}
     </a>
   );

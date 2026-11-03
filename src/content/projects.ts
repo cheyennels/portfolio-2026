@@ -18,10 +18,18 @@ export type Feature = {
   columns?: 1 | 2 | 3 | 4; // image grid columns on desktop (default 4)
 };
 
+export type Gallery = {
+  title: string;
+  caption?: string;
+  images: Img[]; // each image opens full size in a new tab when clicked
+  columns?: 1 | 2 | 3 | 4; // default 4
+};
+
 export type Section = {
   title: string;
   label: string; // the small right-aligned "02 / overview" text
   body: string[]; // one string per paragraph
+  galleries?: Gallery[]; // optional process images shown under the text
 };
 
 export type Project = {
@@ -90,6 +98,52 @@ export const projects: Project[] = [
         body: [
           "I researched a handful of gamified wellness apps to see what worked and what didn't, then moved into moodboarding and feature definition before starting on wireframes. From there I built out low-fidelity screens; onboarding, puppy customization, step tracking, and a basic reward system.",
         ],
+        galleries: [
+          {
+            title: "Research & planning",
+            caption:
+              "I answered the core product questions, compared Pokémon Go, Pikmin Bloom and My Tamagotchi Forever, and defined what each feature does — and doesn't — do.",
+            columns: 3,
+            images: [
+              { src: "/images/pp-research-discovery.jpg", width: 317, height: 733, alt: "Discovery board answering who the app is for, onboarding, the aha moment and why users return" },
+              { src: "/images/pp-research-competitors.jpg", width: 317, height: 798, alt: "Competitive analysis of Pokémon Go, Pikmin Bloom and My Tamagotchi Forever with key takeaways" },
+              { src: "/images/pp-research-features.jpg", width: 317, height: 448, alt: "Feature definition board listing what each feature does and does not do" },
+            ],
+          },
+          {
+            title: "User flow & sketches",
+            caption: "I mapped the flow from sign-up to the dashboard, then sketched each screen on a whiteboard.",
+            columns: 2,
+            images: [
+              { src: "/images/pp-userflow.jpg", width: 487, height: 430, alt: "User flow diagram from sign up and puppy creation to the dashboard, activity, customization and settings" },
+              { src: "/images/pp-sketches.jpg", width: 487, height: 456, alt: "Whiteboard sketches of the app's screens" },
+            ],
+          },
+          {
+            title: "Visual system",
+            caption: "A pixel-art moodboard became a style guide: brand and alert colors, a pixel-art library and reusable components.",
+            images: [
+              { src: "/images/pp-moodboard.jpg", width: 232, height: 557, alt: "Pixel-art moodboard in pinks and purples" },
+              { src: "/images/pp-style.jpg", width: 232, height: 347, alt: "Style guide with brand colors, alert colors and grey scale" },
+              { src: "/images/pp-pixel-art.jpg", width: 232, height: 347, alt: "Pixel-art library of puppies, accessories and backgrounds" },
+              { src: "/images/pp-components.jpg", width: 232, height: 347, alt: "Component sheet with inputs, buttons, cards and navigation" },
+            ],
+          },
+          {
+            title: "Low-fidelity screens",
+            caption: "Low-fi screens covered onboarding, sign-up, puppy creation, step tracking, the wardrobe and settings.",
+            images: [
+              { src: "/images/pp-lofi-splash.png", width: 232, height: 503, alt: "Low-fi splash screen" },
+              { src: "/images/pp-lofi-login.png", width: 232, height: 503, alt: "Low-fi login screen" },
+              { src: "/images/pp-lofi-signup.png", width: 232, height: 503, alt: "Low-fi sign-up screen" },
+              { src: "/images/pp-lofi-create-puppy.png", width: 232, height: 503, alt: "Low-fi home screen with puppy and step progress" },
+              { src: "/images/pp-lofi-step-data.png", width: 232, height: 503, alt: "Low-fi adventure log with step charts" },
+              { src: "/images/pp-lofi-customize.png", width: 232, height: 503, alt: "Low-fi puppy wardrobe screen" },
+              { src: "/images/pp-lofi-change-hat.png", width: 232, height: 503, alt: "Low-fi change outfit screen" },
+              { src: "/images/pp-lofi-settings.png", width: 232, height: 503, alt: "Low-fi settings screen" },
+            ],
+          },
+        ],
       },
     ],
     // TODO: draft — feature descriptions written from the screens and design notes in Figma
@@ -137,10 +191,20 @@ export const projects: Project[] = [
           ],
         },
         {
+          title: "Growing up together",
+          body: "Meeting step goals helps your puppy grow, so Sakura changes from a sleepy baby to a playful puppy to a full-grown adult as you keep walking.", // TODO: draft
+          columns: 3,
+          images: [
+            pp("growth-baby", "Sakura as a baby, curled up asleep on the home screen"),
+            pp("growth-puppy", "Sakura as a puppy, standing on the home screen"),
+            pp("growth-adult", "Sakura as a full-grown adult on the home screen"),
+          ],
+        },
+        {
           title: "Health data, customization and settings",
           body: "An adventure log charts daily, weekly and monthly steps, goals can be adjusted any time, earned accessories dress up your puppy (tap to equip, no save button), and settings include color themes and accessible text.",
           images: [
-            pp("adventure-log", "Adventure log with daily, weekly and monthly step charts", 625),
+            pp("adventure-log", "Adventure log with daily, weekly and monthly step charts", 660),
             pp("customize", "Puppy wardrobe screen with equipped items"),
             pp("change-item", "Hats screen for choosing an accessory"),
             pp("settings", "Settings screen"),

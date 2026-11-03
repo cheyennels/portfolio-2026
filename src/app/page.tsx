@@ -35,7 +35,12 @@ export default function Home() {
       <section className="container section" aria-labelledby="right-now">
         <div className="section-title">
           <h2 className="h2" id="right-now">Right Now</h2>
-          <p className="subheader">{rightNow.updated}</p>
+          <p className="subheader">
+            Updated{" "}
+            <time dateTime={rightNow.updatedOn}>
+              {new Date(`${rightNow.updatedOn}T12:00:00`).toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+            </time>
+          </p>
         </div>
         <div className="split-card">
           <div className="split-card__dark">

@@ -27,6 +27,25 @@ function TextSection({ section }: { section: Section }) {
           <p key={i} className="lead">{para}</p>
         ))}
       </div>
+      {section.galleries?.map((g) => (
+        <div key={g.title} className="gallery">
+          <h3 className="eyebrow">{g.title}</h3>
+          {g.caption && <p className="card-body">{g.caption}</p>}
+          <div className={`feature__images cols-${g.columns ?? 4}`}>
+            {g.images.map((img) => (
+              <a key={img.src} className="gallery__item" href={img.src} target="_blank" rel="noopener noreferrer" title="Open full size">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  sizes="(max-width: 640px) 50vw, 500px"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
     </section>
   );
 }
