@@ -24,10 +24,10 @@ export default function Home() {
         </div>
         <Image
           className="hero__art"
-          src="/images/home-hero.png"
-          alt="Selfie with a husky, surrounded by pixel-art stickers of dogs, hearts and aliens"
-          width={521}
-          height={439}
+          src="/images/home-hero-v2.png"
+          alt="Selfie with a husky, surrounded by pixel-art stickers of a cat, hearts and aliens"
+          width={538}
+          height={417}
           priority
         />
       </section>

@@ -80,13 +80,13 @@ export const projects: Project[] = [
       title: "Puppy Pedometer",
       summary: "Gamified wellness app turning daily steps into puppy care — currently in design.",
       tags: ["UX Research", "In progress"],
-      icon: { src: "/images/icon-puppy.png", width: 123, height: 57, alt: "" },
+      icon: { src: "/images/icon-puppy-v2.png", width: 132, height: 57, alt: "" },
     },
     alert: "Case study · Mobile · In progress",
     // TODO: draft — updated now that the high-fidelity screens exist
     intro:
       "A gamified wellness app that turns daily steps into caring for a virtual puppy. Inspired by Pikmin Bloom, Finch, Tamagotchi and Pokémon Go. Research, IA, and a pixel-art visual system led into high-fidelity designs for the full core experience.",
-    heroImage: { src: "/images/puppy-hero.png", width: 495, height: 497, alt: "Puppy Pedometer pixel-art sign-up screen with a pixel puppy" },
+    heroImage: { src: "/images/puppy-hero-v2.png", width: 511, height: 488, alt: "Puppy Pedometer pixel-art sign-up screen with a pixel shiba, a smiley face and a letter" },
     meta: [
       { label: "Role", value: "Solo designer & Developer" },
       { label: "Platform", value: "iOS and Android" },
