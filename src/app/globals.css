@@ -122,13 +122,16 @@ main {
 .nav {
   background: var(--bg-black);
   height: 81px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 27px 0 34px;
   position: sticky;
   top: 0;
   z-index: 5;
+}
+/* logo and links line up with the page content's max width */
+.nav__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .nav__menu,
 .footer__menu {
@@ -453,22 +456,27 @@ main {
 .feature__images img {
   width: 100%;
 }
-.feature__images img.wide {
+.feature__images .wide {
   grid-column: 1 / -1;
 }
 
-/* Process galleries inside case-study text sections */
+/* Process galleries inside case-study text sections: white cards like the feature cards */
 .gallery {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
   margin-top: 16px;
 }
-.gallery .feature__images {
-  margin-top: 6px;
+.gallery + .gallery {
+  margin-top: 24px;
 }
+
+/* A clickable screenshot that opens the lightbox */
 .gallery__item {
   display: block;
+  width: 100%;
+  padding: 0;
+  font: inherit;
   border: 1px solid var(--black);
   background: var(--white);
   cursor: zoom-in;
@@ -477,6 +485,100 @@ main {
 .gallery__item:hover {
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0 var(--black);
+}
+
+/* Lightbox modal */
+html:has(.lightbox[open]) {
+  overflow: hidden; /* keep the page behind from scrolling */
+}
+.lightbox {
+  /* the open dialog fills the screen; its own background is the dim backdrop */
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(10, 14, 24, 0.92);
+  color: var(--white);
+  overscroll-behavior: contain;
+}
+.lightbox[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.lightbox::backdrop {
+  background: transparent;
+}
+.lightbox__img {
+  /* as large as fits the screen, keeping the image's proportions (--ratio = width / height) */
+  --max-h: calc(100dvh - 140px);
+  width: min(92vw, 1400px, calc(var(--max-h) * var(--ratio)));
+  height: auto;
+  max-width: none;
+}
+.lightbox__caption {
+  max-width: min(92vw, 900px);
+  padding: 0 64px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted-grey);
+}
+.lightbox__count {
+  font-family: var(--font-jetbrains), monospace;
+  white-space: nowrap;
+}
+.lightbox__btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--white);
+  background: var(--black);
+  color: var(--white);
+  font: 400 28px/1 var(--font-space-mono), monospace;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.lightbox__btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+.lightbox__close {
+  top: 16px;
+  right: 16px;
+}
+.lightbox__prev,
+.lightbox__next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lightbox__prev {
+  left: 16px;
+}
+.lightbox__next {
+  right: 16px;
+}
+@media (max-width: 640px) {
+  .lightbox__img {
+    --max-h: calc(100dvh - 180px);
+    width: min(100vw, calc(var(--max-h) * var(--ratio)));
+  }
+  .lightbox__prev,
+  .lightbox__next {
+    top: auto;
+    bottom: 16px;
+    transform: none;
+  }
+  .lightbox__caption {
+    padding: 0 16px 56px;
+  }
 }
 .next-card {
   display: flex;
@@ -571,7 +673,6 @@ main {
     --section-gap: 64px;
   }
   .nav {
-    padding: 0 16px;
     height: 64px;
   }
   .nav__logo {

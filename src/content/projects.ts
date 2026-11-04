@@ -63,6 +63,14 @@ const pp = (name: string, alt: string, height = 504): Img => ({
   alt,
 });
 
+// Not A Plane phone screens (shown at 232px wide)
+const nap = (name: string, alt: string, height: number): Img => ({
+  src: `/images/notaplane-${name}.png`,
+  width: 232,
+  height,
+  alt,
+});
+
 export const projects: Project[] = [
   {
     slug: "puppy-pedometer",
@@ -183,11 +191,11 @@ export const projects: Project[] = [
         {
           title: "A puppy that reflects your progress",
           body: "The home screen is the core loop: your puppy's mood and message change with your step progress, from thrilled to hoping you'll take her for a walk, in every environment.",
+          columns: 3,
           images: [
             pp("home-great", "Home screen: Sakura is thrilled to see you"),
             pp("home-ok", "Home screen: Sakura wants to play and walk"),
             pp("home-bad", "Home screen: Sakura is bummed"),
-            pp("home-space", "Home screen in the Space environment"),
           ],
         },
         {
@@ -270,31 +278,52 @@ export const projects: Project[] = [
         {
           title: "Live sighting map",
           body: "A community map of reported sightings, plotted by location and time, so people can see what others nearby have reported.",
-          images: [{ src: "/images/notaplane-f1.png", width: 998, height: 502, alt: "Four screens of the live sighting map", wide: true }],
+          images: [
+            nap("f1-1", "Sighting map with explained, partial match and unexplained reports", 497),
+            nap("f1-2", "Sighting map with a report selected", 501),
+            nap("f1-3", "Sighting report with no flight or celestial match, marked unexplained", 561),
+            nap("f1-4", "Sighting report explained as a Delta Airlines flight", 565),
+          ],
         },
         {
           title: "Guided report wizard",
           body: "A structured 5-step intake flow that collects location, time, description, media, and map data instead of a free-text box, so reports stay comparable and searchable.",
           images: [
-            { src: "/images/notaplane-f2a.png", width: 998, height: 502, alt: "Four steps of the report wizard", wide: true },
-            { src: "/images/notaplane-f2b-1.png", width: 232, height: 644, alt: "Review and submit screen" },
-            { src: "/images/notaplane-f2b-2.png", width: 232, height: 504, alt: "Analysis complete screen" },
+            nap("f2a-1", "Report step 1: date, time and length of observation", 501),
+            nap("f2a-2", "Report step 2: location on a map", 500),
+            nap("f2a-3", "Report step 3: description, shape, sound and color", 500),
+            nap("f2a-4", "Report step 4: movement, altitude and speed", 512),
+            nap("f2b-1", "Review and submit screen", 644),
+            nap("f2b-2", "Analysis complete screen matching the report to an aircraft", 504),
           ],
         },
         {
           title: "Live data overlay",
           body: "Each report is automatically checked against real flight, satellite, and planetary position data for that time and place — before anyone has to guess.",
-          images: [{ src: "/images/notaplane-f3.png", width: 1002, height: 493, alt: "Live flight and satellite data overlay screens", wide: true }],
+          images: [
+            nap("f3-1", "Filter map screen for aircraft, celestial bodies and time range", 508),
+            nap("f3-2", "Map with a Delta Airlines flight path overlay", 497),
+            nap("f3-3", "Map showing Venus and other celestial positions", 498),
+            nap("f3-4", "Map with flight paths and planets overlaid", 498),
+          ],
         },
         {
           title: "Guest demo login",
           body: "Anonymous sign-in so anyone visiting from a portfolio link can try the full app immediately, without creating an account.",
-          images: [{ src: "/images/notaplane-f4.png", width: 998, height: 493, alt: "Welcome and guest login screens", wide: true }],
+          images: [
+            nap("f4-1", "Welcome screen with login and continue as guest", 516),
+            nap("f4-2", "Guest profile screen with no account data", 516),
+          ],
         },
         {
           title: "Corroboration of sightings",
           body: "Users can corroborate reports that they also saw. This activity shows up as a notification to the poster; they are also able to see how many people have corroborated the report.",
-          images: [{ src: "/images/notaplane-f5.png", width: 998, height: 493, alt: "Corroboration and notification screens", wide: true }],
+          images: [
+            nap("f5-1", "My sightings list with explained and unexplained reports", 563),
+            nap("f5-2", "Activity feed of people corroborating your sightings", 565),
+            nap("f5-3", "Sighting report the user has corroborated", 515),
+            nap("f5-4", "Your own report showing its corroboration count", 518),
+          ],
         },
       ],
     },

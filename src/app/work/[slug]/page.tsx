@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Arrow } from "@/components/Arrow";
 import { BackLink, Button, Chips, SectionTitle } from "@/components/ui";
+import { ImageGrid } from "@/components/ImageGrid";
 import { getProject, projects, type Section } from "@/content/projects";
 
 export const dynamicParams = false;
@@ -28,23 +29,13 @@ function TextSection({ section }: { section: Section }) {
         ))}
       </div>
       {section.galleries?.map((g) => (
-        <div key={g.title} className="gallery">
-          <h3 className="eyebrow">{g.title}</h3>
-          {g.caption && <p className="card-body">{g.caption}</p>}
-          <div className={`feature__images cols-${g.columns ?? 4}`}>
-            {g.images.map((img) => (
-              <a key={img.src} className="gallery__item" href={img.src} target="_blank" rel="noopener noreferrer" title="Open full size">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  sizes="(max-width: 640px) 50vw, 500px"
-                />
-              </a>
-            ))}
+        <article key={g.title} className="card gallery">
+          <div>
+            <h3 className="card-title">{g.title}</h3>
+            {g.caption && <p className="card-body" style={{ marginTop: 9 }}>{g.caption}</p>}
           </div>
-        </div>
+          <ImageGrid images={g.images} columns={g.columns} />
+        </article>
       ))}
     </section>
   );
@@ -125,21 +116,7 @@ export default async function CaseStudy({ params }: PageProps<"/work/[slug]">) {
                   </div>
                   <p className="card-body" style={{ marginTop: 9 }}>{f.body}</p>
                 </div>
-                {f.images && (
-                  <div className={`feature__images cols-${f.columns ?? 4}`}>
-                    {f.images.map((img) => (
-                      <Image
-                        key={img.src}
-                        className={img.wide ? "wide" : undefined}
-                        src={img.src}
-                        alt={img.alt}
-                        width={img.width}
-                        height={img.height}
-                        sizes={img.wide ? "(max-width: 1160px) 100vw, 1000px" : "(max-width: 640px) 50vw, 500px"}
-                      />
-                    ))}
-                  </div>
-                )}
+                {f.images && <ImageGrid images={f.images} columns={f.columns} />}
               </article>
             ))}
           </div>
