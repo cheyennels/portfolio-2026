@@ -131,11 +131,12 @@ export const projects: Project[] = [
             title: "Visual system",
             caption: "A pixel-art moodboard became a style guide: brand and alert colors, a pixel-art library and reusable components.",
             images: [
-              { src: "/images/pp-moodboard.jpg", width: 232, height: 557, alt: "Pixel-art moodboard in pinks and purples" },
-              { src: "/images/pp-style.jpg", width: 232, height: 347, alt: "Style guide with brand colors, alert colors and grey scale" },
-              { src: "/images/pp-pixel-art.jpg", width: 232, height: 347, alt: "Pixel-art library of puppies, accessories and backgrounds" },
-              { src: "/images/pp-components.jpg", width: 232, height: 347, alt: "Component sheet with inputs, buttons, cards and navigation" },
+              { src: "/images/pp-moodboard.jpg", width: 1665, height: 4000, alt: "Pixel-art moodboard in pinks and purples" },
+              { src: "/images/pp-style.jpg", width: 2445, height: 4000, alt: "Style guide with brand colors, alert colors, grey scale and font" },
+              { src: "/images/pp-pixel-art.jpg", width: 4000, height: 2460, alt: "Pixel-art library: buttons, inputs, cards, puppies at each growth stage, customization, icons and backgrounds", wide: true },
+              { src: "/images/pp-components.jpg", width: 4000, height: 2460, alt: "Component sheet with typography, buttons, inputs, cards and modals, step charts and navigation", wide: true },
             ],
+            columns: 2,
           },
           {
             title: "Low-fidelity screens",
